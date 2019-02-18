@@ -24,9 +24,9 @@ import numpy as np
 import pandas as pd
 
 # 显示前几行的数据, pandas 用于处理表格型数据.
-print(pd.read_csv("data/train.csv").head(2))
-print(pd.read_csv("data/valid.csv").head(2))
-print(pd.read_csv("data/test.csv").head(2), end="\n\n")
+print(pd.read_csv("data/kaggle/train.csv").head(2))
+print(pd.read_csv("data/kaggle/valid.csv").head(2))
+print(pd.read_csv("data/kaggle/test.csv").head(2), end="\n\n")
 
 # 特征域, Field 用于定于数据如何被预处理, 如序列化等. 首先
 # 是文本数据, 它需要被分词 (sequential + tokenize), 小写 (lower).
@@ -49,7 +49,7 @@ LABELLED_DATA_FIELD = [
 
 # splits (classmethod) 方法可以用于同时读取格式相同的数据文件
 train_set, valid_set = TabularDataset.splits(
-    path="data", train="train.csv", validation="valid.csv",
+    path="data/kaggle", train="train.csv", validation="valid.csv",
     format="csv", fields=LABELLED_DATA_FIELD, skip_header=True,
 )
 
@@ -59,7 +59,7 @@ UNLABELLED_DATA_FILED = [("id", None), ("comment_text", TEXT_FIELD)]
 # __call__ 方法可直接读入数据集, 因为格式和 train/dev 不同, 另
 # 外如果不是 txt 格式, 那么需要用 skip_header 跳过 csv 的头行.
 test_set = TabularDataset(
-    path="data/test.csv", format="csv", skip_header=True,
+    path="data/kaggle/test.csv", format="csv", skip_header=True,
     fields=UNLABELLED_DATA_FILED
 )
 
