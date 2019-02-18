@@ -1,9 +1,7 @@
 """
 @Translator:    Lee
 @BuildTime:     19/02/18
-@Filename:      classify.py
 @Software:      Pycharm
-@Reference:     https://github.com/keitakurita/practical-torchtext
 
 用 Torchtext + Pytorch 完成一个分类任务, 仓库数据不完整, 完整
 数据的地址: https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge
