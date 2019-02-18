@@ -224,4 +224,3 @@ for x, y in test_wrapper:
 
 test_array = np.hstack(test_pred_list)
 print(test_array)
-
